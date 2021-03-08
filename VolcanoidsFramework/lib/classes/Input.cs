@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VolcanoidsFramework.lib.classes
+﻿namespace VolcanoidsFramework.lib.classes
 {
     public class Input
     {

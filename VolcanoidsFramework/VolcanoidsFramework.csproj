@@ -298,7 +298,6 @@
     <Compile Include="Framework.cs" />
     <Compile Include="lib\Station.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Send.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
