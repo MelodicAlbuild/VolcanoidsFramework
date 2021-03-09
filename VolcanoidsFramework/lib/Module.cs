@@ -7,13 +7,46 @@ using VolcanoidsFramework.lib.scripts;
 
 namespace VolcanoidsFramework.lib
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   The Module Creation Class. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class Module
     {
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Initializes this object. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <typeparam name="T">    Generic type parameter. </typeparam>
+        /// <param name="str">  [in,out] The string. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         private static void Initialize<T>(ref T str)
         where T : struct, ISerializationCallbackReceiver
         {
             str.OnAfterDeserialize();
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Creates production module. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="codename">         The codename. </param>
+        /// <param name="variantname">      The variantname. </param>
+        /// <param name="maxstack">         The maxstack. </param>
+        /// <param name="baseitem">         The baseitem. </param>
+        /// <param name="name">             The name. </param>
+        /// <param name="desc">             The description. </param>
+        /// <param name="guidstring">       The guidstring. </param>
+        /// <param name="categoryname">     The categoryname. </param>
+        /// <param name="factorytypename">  The factorytypename. </param>
+        /// <param name="icon">             The icon. </param>
+        /// <param name="categories">       The categories. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         public static void CreateProductionModule(string codename, string variantname, int maxstack, string baseitem, LocalizedString name, LocalizedString desc, string guidstring, string categoryname, string factorytypename, Sprite icon, RecipeCategory[] categories)
         {
@@ -59,6 +92,25 @@ namespace VolcanoidsFramework.lib
             AssetReference[] assets = new AssetReference[] { new AssetReference() { Object = item, Guid = guid, Labels = new string[0] } };
             RuntimeAssetStorage.Add(assets, default);
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Creates production module. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="codename">         The codename. </param>
+        /// <param name="variantname">      The variantname. </param>
+        /// <param name="maxstack">         The maxstack. </param>
+        /// <param name="basename">         The basename. </param>
+        /// <param name="name">             The name. </param>
+        /// <param name="desc">             The description. </param>
+        /// <param name="guidstring">       The guidstring. </param>
+        /// <param name="categoryname">     The categoryname. </param>
+        /// <param name="factorytypename">  The factorytypename. </param>
+        /// <param name="icon">             The icon. </param>
+        /// <param name="categories">       The categories. </param>
+        /// <param name="looping">          True to looping. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         public static void CreateProductionModule(string codename, string variantname, int maxstack, string basename, LocalizedString name, LocalizedString desc, string guidstring, string categoryname, string factorytypename, Sprite icon, RecipeCategory[] categories, bool looping)
         {

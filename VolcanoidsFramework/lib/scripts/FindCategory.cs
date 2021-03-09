@@ -1,8 +1,26 @@
 ﻿namespace VolcanoidsFramework.lib.scripts
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   A Category Finder. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class FindCategory
     {
+        /// <summary>   The tempcategory for returning. </summary>
         private static RecipeCategory tempcategory;
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Searches for the first category name. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="categoryname"> The categoryname. </param>
+        ///
+        /// <returns>   The found category name. </returns>
+        ///-------------------------------------------------------------------------------------------------
+
         public static RecipeCategory FindCategoryName(string categoryname)
         {
             tempcategory = null;

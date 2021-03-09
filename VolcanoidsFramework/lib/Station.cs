@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -7,14 +6,47 @@ using VolcanoidsFramework.lib.scripts;
 
 namespace VolcanoidsFramework.lib
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   The Station Production Class. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class Station
     {
+        /// <summary>   (Immutable) unique identifier for the production station. </summary>
         private static readonly GUID productionStationGUID = GUID.Parse("7c32d187420152f4da3a79d465cbe87a");
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Initializes the passed Object. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <typeparam name="T">    Generic type parameter. </typeparam>
+        /// <param name="str">  [in,out] The string. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         private static void Initialize<T>(ref T str)
             where T : struct, ISerializationCallbackReceiver
         {
             str.OnAfterDeserialize();
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Creates a station. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="factoryType">  Type of the factory. </param>
+        /// <param name="codename">     The codename. </param>
+        /// <param name="maxStack">     Max Stack Size of this Item. </param>
+        /// <param name="name">         The name. </param>
+        /// <param name="desc">         The description. </param>
+        /// <param name="guidString">   The unique identifier string. </param>
+        /// <param name="icon">         The icon. </param>
+        /// <param name="variantname">  The variantname. </param>
+        /// <param name="categories">   The categories. </param>
+        ///-------------------------------------------------------------------------------------------------
 
         public static void CreateStation(FactoryType factoryType, string codename, int maxStack, LocalizedString name, LocalizedString desc, string guidString, Sprite icon, string variantname, RecipeCategory[] categories)
         {

@@ -6,8 +6,28 @@ using VolcanoidsFramework.lib.scripts;
 
 namespace VolcanoidsFramework.lib
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   The Recipe Creator Class. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class RecipeCreator
     {
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Creates a recipe. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="recipeName">       Name of the recipe. </param>
+        /// <param name="inputs">           The inputs. </param>
+        /// <param name="outputs">          The outputs. </param>
+        /// <param name="baseRecipe">       The base recipe. </param>
+        /// <param name="itemId">           Identifier for the item. </param>
+        /// <param name="requiredItems">    The required items. </param>
+        /// <param name="recipeCategory">   Category the recipe belongs to. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         public static void CreateRecipe(string recipeName, classes.Input[] inputs, object[] outputs, string baseRecipe, string itemId, string[] requiredItems, string recipeCategory)
         {
             var outputItem = GameResources.Instance.Items.FirstOrDefault(s => s.name == outputs[0].ToString());

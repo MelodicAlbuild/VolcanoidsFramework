@@ -5,11 +5,31 @@ using UnityEngine;
 
 namespace VolcanoidsFramework.lib
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   Deposit Creation System. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class Deposit
     {
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Creates a deposit. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="Underground">          If Deposit is Underground. </param>
+        /// <param name="PercentageToReplace">  The percentage to replace. </param>
+        /// <param name="outputname">           The outputname. </param>
+        /// <param name="minyield">             The minyield. </param>
+        /// <param name="maxyield">             The maxyield. </param>
+        /// <param name="ItemToReplace">        The item to replace. </param>
+        ///-------------------------------------------------------------------------------------------------
+
         public static void CreateDeposit(bool Underground, int PercentageToReplace, string outputname, float minyield, float maxyield, string ItemToReplace)
         {
-
+            DepositLocationSurface[] depositsurface = Resources.FindObjectsOfTypeAll<DepositLocationSurface>();
+            DepositLocationUnderground[] depositunderground = Resources.FindObjectsOfTypeAll<DepositLocationUnderground>();
             if (Underground)
             {
                 foreach (DepositLocationUnderground underground in depositunderground)
@@ -39,6 +59,17 @@ namespace VolcanoidsFramework.lib
                 }
             }
         }
+
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets an item. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="itemname"> The itemname. </param>
+        ///
+        /// <returns>   The item. </returns>
+        ///-------------------------------------------------------------------------------------------------
+
         private static ItemDefinition GetItem(string itemname)
         {
             ItemDefinition item = GameResources.Instance.Items.FirstOrDefault(s => s.name == itemname);
@@ -50,8 +81,7 @@ namespace VolcanoidsFramework.lib
             return item;
 
         }
-        private static DepositLocationSurface[] depositsurface;
-        private static DepositLocationUnderground[] depositunderground;
+        /// <summary>   (Immutable) the ore field. </summary>
         private static readonly FieldInfo OreField = typeof(DepositLocation).GetField("m_ore", BindingFlags.NonPublic | BindingFlags.Instance);
     }
 }

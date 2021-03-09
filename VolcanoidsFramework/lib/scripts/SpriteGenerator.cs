@@ -3,8 +3,24 @@ using UnityEngine;
 
 namespace VolcanoidsFramework.lib.scripts
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   A sprite generator. </summary>
+    ///
+    /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+    ///-------------------------------------------------------------------------------------------------
+
     class SpriteGenerator
     {
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Generates a sprite. </summary>
+        ///
+        /// <remarks>   MelodicAlbuild, 3/8/2021. </remarks>
+        ///
+        /// <param name="iconpath"> The iconpath. </param>
+        ///
+        /// <returns>   The sprite. </returns>
+        ///-------------------------------------------------------------------------------------------------
+
         public static Sprite GenerateSprite(string iconpath)
         {
             var path = Path.Combine(Application.persistentDataPath, "Mods", iconpath);
